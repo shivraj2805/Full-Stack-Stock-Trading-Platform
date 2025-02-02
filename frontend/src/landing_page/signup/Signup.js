@@ -15,7 +15,7 @@ export const Signup = () => {
   const navigate = useNavigate();
   const { storeTokenInLS } = useAuth();
 
-  const backendUrl = process.env.REACT_APP_BACKEND_URL||'http://localhost:3000';
+  const backendUrl = process.env.REACT_APP_BACKEND_URL||'https://full-stack-trading-platform-backend.onrender.com';
 
   const URL = `${backendUrl}/api/auth/register`; 
   console.log("Registration URL:", URL); // Log the URL to confirm it's correct
@@ -55,7 +55,7 @@ export const Signup = () => {
       if (data && data.token) {
         storeTokenInLS(data.token);
         toast.success("Registration successful!");
-        window.location.href = "http://localhost:5173"; // Redirect to the desired external URL      } else {
+        window.location.href = "https://full-stack-treding-platform-dashboard.onrender.com/"; // Redirect to the desired external URL      } else {
         toast.error("Registration failed! Please try again.");
       }
     } catch (error) {

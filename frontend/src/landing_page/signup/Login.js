@@ -13,7 +13,9 @@ export const Login = () => {
   const navigate = useNavigate();
   const { storeTokenInLS} = useAuth();
 
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`;
+  const backendUrl = process.env.REACT_APP_BACKEND_URL||'https://full-stack-trading-platform-backend.onrender.com';
+
+  const URL = `${backendUrl}/api/auth/login`;
 
   const handleInput = (e) => {
     let name = e.target.name;
@@ -45,7 +47,7 @@ export const Login = () => {
 
         setUser({ email: "", password: "" });
         toast.success("Login successful");
-        window.location.href = "http://localhost:5173"; // Redirect to the desired external URL      } else {
+        window.location.href = "https://full-stack-treding-platform-dashboard.onrender.com/"; // Redirect to the desired external URL      } else {
 
       } else {
         toast.error(
